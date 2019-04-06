@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
 using System.Text;
-using clearpixels.Logging;
 
 namespace ioschools.DB.repository
 {
@@ -44,11 +43,9 @@ namespace ioschools.DB.repository
                         sb.AppendFormat("\tDatabase value: {0}", mcc.DatabaseValue);
                     }
                 }
-                Syslog.Write(ErrorLevel.CRITICAL, sb.ToString());
             }
             catch (Exception ex)
             {
-                Syslog.Write(ex);
                 throw;
             }
         }

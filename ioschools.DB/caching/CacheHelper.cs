@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Caching;
-using clearpixels.Logging;
 
 namespace ioschools.DB.caching
 {
@@ -39,7 +38,7 @@ namespace ioschools.DB.caching
                 {
                     /////////No cache... implement new SqlCacheDependeny//////////
                     //1. Get connstring from DataContext
-                    var connStr = Properties.Settings.Default.ioschoolsConnectionString;
+                    var connStr = "";// Properties.Settings.Default.ioschoolsConnectionString;
                     //2. Get SqlCommand from DataContext and the LinqQuery
                     string sqlCmd = dc.GetCommand(q).CommandText;
                     //3. Create Conn to use in SqlCacheDependency
@@ -84,7 +83,6 @@ namespace ioschools.DB.caching
             }
             catch (Exception ex)
             {
-                Syslog.Write(ex);
                 throw;
             }
         }

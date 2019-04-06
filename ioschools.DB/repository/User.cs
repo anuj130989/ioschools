@@ -5,7 +5,6 @@ using System.Linq;
 using ioschools.Data;
 using ioschools.Data.Attendance;
 using ioschools.Data.User;
-using clearpixels.Logging;
 
 namespace ioschools.DB.repository
 {
@@ -154,8 +153,6 @@ namespace ioschools.DB.repository
                 }
                 catch (Exception ex)
                 {
-                    Syslog.Write(ex);
-                    Syslog.Write(ErrorLevel.WARNING, viewerid.HasValue?viewerid.Value.ToString():"");
                 }
             }
 
